@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 // Props interface for the Toast component
 interface ToastProps {
   message: string; // Message to display in the toast
-  type: 'success' | 'error'; // Type of toast, either 'success' or 'error'
+  type: 'success' | 'warning'; // Type of toast, either 'success' or 'warning'
   duration?: number; // Optional duration for which the toast should be visible
 }
 
@@ -72,7 +72,7 @@ const Toast: React.FC<ToastProps> = ({ message, type, duration = 3000 }) => {
       <div className="flex items-center">
         {toastIcon}
         <h3 className="text-lg font-semibold">
-          {type === 'success' ? 'Success' : 'Error'}
+          {type === 'success' ? 'Success' : 'Warning'}
         </h3>
       </div>
       <p>{message}</p>

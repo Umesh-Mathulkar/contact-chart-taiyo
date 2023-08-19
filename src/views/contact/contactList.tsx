@@ -6,12 +6,13 @@ import { FaEye, FaEdit, FaTrash } from 'react-icons/fa';
 import EditContact from './editContact';
 import ViewContact from './viewContact';
 import { deleteContact } from '../../store/actions/contactActions';
+import Toast from '../../components/ui/toast';
 
 const ContactList: React.FC = () => {
   const contacts = useSelector((state: RootState) => state.contacts.contacts);
   const [selectedContact, setSelectedContact] = useState<any | null>(null);
   const dispatch = useDispatch();
-
+  const [toastMessage, setToastMessage] = useState('');
   
   const openContactDetails = (contact: any) => {
     setSelectedContact(contact);
@@ -19,6 +20,7 @@ const ContactList: React.FC = () => {
 
   const handleDeleteClick = (contactId: string) => {
     dispatch(deleteContact(contactId));
+    setToastMessage('Contact deleted');
   };
 console.log(contacts)
   return (
@@ -74,6 +76,7 @@ console.log(contacts)
           ))}
         </tbody>
       </table>
+      {toastMessage && <Toast message={toastMessage} type='warning' duration={3000} />}
     </div>
   );
 };

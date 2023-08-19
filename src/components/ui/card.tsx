@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> = ({ title, children }) => {
   return (
     <div className="w-full p-2">
       {/* Card title */}
-      <div className="font-bold text-xl mb-2">{capitalizedTitle}</div>
+      <div className="font-bold  text-xl mb-2">{capitalizedTitle}</div>
       
       {/* Card content */}
       <div className="rounded overflow-hidden shadow-sm border border-gray-200">

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { FaAddressBook, FaChartBar } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 // Props interface for the SidebarList component
 interface SidebarListProps {
@@ -10,8 +11,8 @@ interface SidebarListProps {
 const SidebarList: React.FC<SidebarListProps> = ({ onNavLinkClick }) => {
   // Array of navigation items with labels and links
   const navigationItems = [
-    { label: 'Contact', link: '/' },
-    { label: 'Charts and Maps', link: '/chart-map' },
+    { label: 'Contact', link: '/', icon: <FaAddressBook /> },
+    { label: 'Charts and Maps', link: '/chart-map', icon: <FaChartBar /> },
   ];
 
   return (
@@ -20,14 +21,19 @@ const SidebarList: React.FC<SidebarListProps> = ({ onNavLinkClick }) => {
         {/* Mapping through navigation items */}
         {navigationItems.map((item, index) => (
           <li key={index}>
-            {/* Navigation link */}
-            <Link
+            <NavLink
               to={item.link}
-              className="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
-              onClick={onNavLinkClick} // Call the provided click handler when the link is clicked
+              className={({ isActive }) =>
+                isActive
+                  ? 'flex items-center px-4 py-2 text-white bg-gray-700 text-[20px] my-3'
+                  : 'flex items-center px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white text-[20px] my-3'
+              }
+              onClick={onNavLinkClick}
             >
-              {item.label}
-            </Link>
+              {item.icon} {/* Icon component */}
+              <span className="ml-2">{item.label}</span>
+            </NavLink>
+
           </li>
         ))}
       </ul>

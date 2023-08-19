@@ -42,7 +42,7 @@ const EditContact: React.FC<EditContactProps> = ({ contactDetails }) => {
         phone: contactDetails?.phone,
         status: contactDetails?.status,
     };
-
+console.log(initialValues)
     return (
         <div>
             {/* Button to open the edit dialog */}
