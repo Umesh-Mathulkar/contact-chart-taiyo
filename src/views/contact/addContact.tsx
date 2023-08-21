@@ -1,8 +1,8 @@
 // Importing necessary libraries and components
 import React, { useState } from 'react';
-import ContactForm from './contactForm'; // Import your ContactForm component
+import ContactForm from './contactForm'; 
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../store/actions/contactActions'; // Import your action for adding a contact
+import { addContact } from '../../store/actions/contactActions';
 import Toast from '../../components/ui/toast';
 import DialogBox from '../../components/ui/dialog';
 import { FaPlus } from 'react-icons/fa';

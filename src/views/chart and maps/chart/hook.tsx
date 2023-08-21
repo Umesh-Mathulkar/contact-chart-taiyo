@@ -1,7 +1,7 @@
 // Importing necessary functions and libraries
 import { useQuery } from 'react-query';
 import axios from 'axios';
-import { ChartApiEndpoint } from '../../../services/chartServices'; // Make sure this import is correctly defined
+import { ChartApiEndpoint } from '../../../services/chartServices'; 
 
 // Interface representing the structure of cases data
 interface CasesData {

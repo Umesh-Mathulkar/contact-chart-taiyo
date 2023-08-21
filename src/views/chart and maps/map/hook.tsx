@@ -1,7 +1,7 @@
 // Importing necessary functions and libraries
 import { useQuery } from 'react-query';
 import axios from 'axios';
-import { MapApiEndpoint } from '../../../services/chartServices'; // Make sure this import is correctly defined
+import { MapApiEndpoint } from '../../../services/chartServices'; 
 
 // Interface representing the structure of Covid data
 interface CovidData {
